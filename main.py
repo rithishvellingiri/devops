@@ -39,6 +39,7 @@ def quick_eda(df, show_plots=False):
         df[TARGET_COL].hist(bins=30)
         plt.title(f"Distribution of {TARGET_COL}")
         plt.show()
+        #devops new branch
 
 def remove_outliers_iqr(df, numeric_cols=None, k=1.5, verbose=True):
     if numeric_cols is None:
