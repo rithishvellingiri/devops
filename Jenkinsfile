@@ -13,6 +13,17 @@ pipeline {
             }
         }
 
+        stage('Python Test (Pytest)') {
+            steps {
+                sh '''
+                python -m venv venv
+                source venv/bin/activate
+                pip install pytest
+                pytest
+                '''
+            }
+        }
+
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('sonar server') {
